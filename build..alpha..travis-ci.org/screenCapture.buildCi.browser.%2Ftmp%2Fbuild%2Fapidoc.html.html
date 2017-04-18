@@ -1,0 +1,604 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/puffnfresh/daggy#readme">daggy (v0.0.1)</a>
+</h1>
+<h4>Library for creating tagged constructors.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.daggy">module daggy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.daggy.create">
+            function <span class="apidocSignatureSpan">daggy.</span>create
+            <span class="apidocSignatureSpan">(proto)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.daggy.getInstance">
+            function <span class="apidocSignatureSpan">daggy.</span>getInstance
+            <span class="apidocSignatureSpan">(self, constructor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.daggy.tagged">
+            function <span class="apidocSignatureSpan">daggy.</span>tagged
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.daggy.taggedSum">
+            function <span class="apidocSignatureSpan">daggy.</span>taggedSum
+            <span class="apidocSignatureSpan">(constructors)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.daggy.create">module daggy.create</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.daggy.create.create">
+            function <span class="apidocSignatureSpan">daggy.</span>create
+            <span class="apidocSignatureSpan">(proto)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.daggy.getInstance">module daggy.getInstance</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.daggy.getInstance.getInstance">
+            function <span class="apidocSignatureSpan">daggy.</span>getInstance
+            <span class="apidocSignatureSpan">(self, constructor)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.daggy.tagged">module daggy.tagged</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.daggy.tagged.tagged">
+            function <span class="apidocSignatureSpan">daggy.</span>tagged
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.daggy.taggedSum">module daggy.taggedSum</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.daggy.taggedSum.taggedSum">
+            function <span class="apidocSignatureSpan">daggy.</span>taggedSum
+            <span class="apidocSignatureSpan">(constructors)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.daggy" id="apidoc.module.daggy">module daggy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.daggy.create" id="apidoc.element.daggy.create">
+        function <span class="apidocSignatureSpan">daggy.</span>create
+        <span class="apidocSignatureSpan">(proto)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create(proto) {
+    function Ctor() {}
+    Ctor.prototype = proto;
+    return new Ctor();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.daggy.getInstance" id="apidoc.element.daggy.getInstance">
+        function <span class="apidocSignatureSpan">daggy.</span>getInstance
+        <span class="apidocSignatureSpan">(self, constructor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getInstance(self, constructor) {
+    return self instanceof constructor ? self : create(constructor.prototype);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+code &gt; span.fu { color: #06287e; }
+code &gt; span.er { color: #ff0000; font-weight: bold; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1 id="daggy"&gt;Daggy&lt;/h1&gt;
+&lt;p&gt;Library for creating tagged constructors.&lt;/p&gt;
+&lt;h2 id="daggy.getinstanceself-constructor"&gt;&lt;code&gt;daggy.<span class="apidocCodeKeywordSpan">getInstance
+</span>(self, constructor)&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Returns &lt;code&gt;self&lt;/code&gt; if it's an &lt;code&gt;instanceof constructor&lt;/code&gt;
+;, otherwise creates a new object with &lt;code&gt;constructor&lt;/code&gt;'s prototype.&lt;/p&gt;
+&lt;p&gt;Allows creating constructors that can be used with or without the new keyword but always have the correct prototype
+.&lt;/p&gt;
+&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;span class=&amp;#
+x22;kw"&gt;function&lt;/span&gt; &lt;span class="fu"&gt;WrappedArray&lt;/span&gt;() {
+    &lt;span class="kw"&gt;var&lt;/span&gt; self = &lt;span class="ot"&gt;daggy&lt;/span&gt;.&amp;#
+x3c;span class="fu"&gt;getInstance&lt;/span&gt;(&lt;span class="kw"&gt;this&lt;/span&gt;, WrappedArray
+);
+    &lt;span class="ot"&gt;self&lt;/span&gt;.&lt;span class="fu"&gt;_array&lt;/span&gt; = [].&amp;#
+x3c;span class="ot"&gt;slice&lt;/span&gt;.&lt;span class="fu"&gt;apply&lt;/span&gt;(arguments);
+    &lt;span class="kw"&gt;return&lt;/span&gt; self;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.daggy.tagged" id="apidoc.element.daggy.tagged">
+        function <span class="apidocSignatureSpan">daggy.</span>tagged
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tagged() {
+    var fields = [].slice.apply(arguments);
+    function wrapped() {
+        var self = getInstance(this, wrapped),
+            i;
+
+        if(arguments.length != fields.length)
+            throw new TypeError('Expected ' + fields.length + ' arguments, got ' + arguments.length);
+
+        for(i = 0; i &lt; fields.length; i++)
+            self[fields[i]] = arguments[i];
+
+        return self;
+    }
+    wrapped._length = fields.length;
+    return wrapped;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;span class=&amp;#
+x22;kw"&gt;function&lt;/span&gt; &lt;span class="fu"&gt;WrappedArray&lt;/span&gt;() {
+    &lt;span class="kw"&gt;var&lt;/span&gt; self = &lt;span class="ot"&gt;daggy&lt;/span&gt;.&amp;#
+x3c;span class="fu"&gt;getInstance&lt;/span&gt;(&lt;span class="kw"&gt;this&lt;/span&gt;, WrappedArray
+);
+    &lt;span class="ot"&gt;self&lt;/span&gt;.&lt;span class="fu"&gt;_array&lt;/span&gt; = [].&amp;#
+x3c;span class="ot"&gt;slice&lt;/span&gt;.&lt;span class="fu"&gt;apply&lt;/span&gt;(arguments);
+    &lt;span class="kw"&gt;return&lt;/span&gt; self;
+}
+&lt;span class="kw"&gt;new&lt;/span&gt; &lt;span class="fu"&gt;WrappedArray&lt;/span&gt;(&lt;
+;span class="dv"&gt;1&lt;/span&gt;, &lt;span class="dv"&gt;2&lt;/span&gt;, &lt;span class=&amp;#
+x22;dv"&gt;3&lt;/span&gt;) &lt;span class="kw"&gt;instanceof&lt;/span&gt; WrappedArray; &lt;span
+class="co"&gt;// true&lt;/span&gt;
+&lt;span class="fu"&gt;WrappedArray&lt;/span&gt;(&lt;span class="dv"&gt;1&lt;/span&gt;, &lt;
+;span class="dv"&gt;2&lt;/span&gt;, &lt;span class="dv"&gt;3&lt;/span&gt;) &lt;span class=&amp;#
+x22;kw"&gt;instanceof&lt;/span&gt; WrappedArray; &lt;span class="co"&gt;// true&lt;/span&gt;&lt;/
+code&gt;&lt;/pre&gt;
+&lt;h2 id="daggy.taggedarguments"&gt;&lt;code&gt;daggy.<span class="apidocCodeKeywordSpan">tagged</span>(arguments
+)&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Creates a new constructor with the given field names as arguments and properties. Allows &lt;code&gt;instanceof
+&lt;/code&gt; checks with returned constructor.&lt;/p&gt;
+&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;span class=&amp;#
+x22;kw"&gt;var&lt;/span&gt; Tuple3 = &lt;span class="ot"&gt;daggy&lt;/span&gt;.&lt;span class="
+;fu"&gt;tagged&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, &lt;span class
+="st"&gt;&amp;#39;y&amp;#39;&lt;/span&gt;, &lt;span class="st"&gt;&amp;#39;z&amp;#39;&lt;/span
+&gt;);
+
+&lt;span class="kw"&gt;var&lt;/span&gt; _123 = &lt;span class="fu"&gt;Tuple3&lt;/span&gt;(&amp;#
+x3c;span class="dv"&gt;1&lt;/span&gt;, &lt;span class="dv"&gt;2&lt;/span&gt;, &lt;span class
+="dv"&gt;3&lt;/span&gt;); &lt;span class="co"&gt;// optional new keyword&lt;/span&gt;
+&lt;span class="ot"&gt;_123&lt;/span&gt;.&lt;span class="fu"&gt;x&lt;/span&gt; == &lt;span
+ class="dv"&gt;1&lt;/span&gt; &amp;amp;&amp;amp; &lt;span class="ot"&gt;_123&lt;/span&gt;.&amp;#
+x3c;span class="fu"&gt;y&lt;/span&gt; == &lt;span class="dv"&gt;2&lt;/span&gt; &amp;amp;&amp;
+;amp; &lt;span class="ot"&gt;_123&lt;/span&gt;.&lt;span class="fu"&gt;z&lt;/span&gt; == &lt;
+;span class="dv"&gt;3&lt;/span&gt;; &lt;span class="co"&gt;// true&lt;/span&gt;
+_123 &lt;span class="kw"&gt;instanceof&lt;/span&gt; Tuple3; &lt;span class="co"&gt;// true&lt;/
+span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="daggy.taggedsumconstructors"&gt;&lt;code&gt;daggy.taggedSum(constructors)&lt;/code&gt;&lt;/h2
+&gt;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.daggy.taggedSum" id="apidoc.element.daggy.taggedSum">
+        function <span class="apidocSignatureSpan">daggy.</span>taggedSum
+        <span class="apidocSignatureSpan">(constructors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function taggedSum(constructors) {
+    var key;
+
+    function definitions() {
+        throw new TypeError('Tagged sum was called instead of one of its properties.');
+    }
+
+    function makeCata(key) {
+        return function(dispatches) {
+            var fields = constructors[key],
+                args = [],
+                i;
+
+            if(!dispatches[key])
+                throw new TypeError("Constructors given to cata didn't include: " + key);
+
+            for(i = 0; i &lt; fields.length; i++)
+                args.push(this[fields[i]]);
+
+            return dispatches[key].apply(this, args);
+        };
+    }
+
+    function makeProto(key) {
+        var proto = create(definitions.prototype);
+        proto.cata = makeCata(key);
+        return proto;
+    }
+
+    for(key in constructors) {
+        if(!constructors[key].length) {
+            definitions[key] = makeProto(key);
+            continue;
+        }
+        definitions[key] = tagged.apply(null, constructors[key]);
+        definitions[key].prototype = makeProto(key);
+    }
+
+    return definitions;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&lt;h2 id="daggy.taggedarguments"&gt;&lt;code&gt;daggy.tagged(arguments)&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Creates a new constructor with the given field names as arguments and properties. Allows &lt;code&gt;instanceof
+&lt;/code&gt; checks with returned constructor.&lt;/p&gt;
+&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;span class=&amp;#
+x22;kw"&gt;var&lt;/span&gt; Tuple3 = &lt;span class="ot"&gt;daggy&lt;/span&gt;.&lt;span class="
+;fu"&gt;tagged&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, &lt;span class
+="st"&gt;&amp;#39;y&amp;#39;&lt;/span&gt;, &lt;span class="st"&gt;&amp;#39;z&amp;#39;&lt;/span
+&gt;);
+
+&lt;span class="kw"&gt;var&lt;/span&gt; _123 = &lt;span class="fu"&gt;Tuple3&lt;/span&gt;(&amp;#
+x3c;span class="dv"&gt;1&lt;/span&gt;, &lt;span class="dv"&gt;2&lt;/span&gt;, &lt;span class
+="dv"&gt;3&lt;/span&gt;); &lt;span class="co"&gt;// optional new keyword&lt;/span&gt;
+&lt;span class="ot"&gt;_123&lt;/span&gt;.&lt;span class="fu"&gt;x&lt;/span&gt; == &lt;span
+ class="dv"&gt;1&lt;/span&gt; &amp;amp;&amp;amp; &lt;span class="ot"&gt;_123&lt;/span&gt;.&amp;#
+x3c;span class="fu"&gt;y&lt;/span&gt; == &lt;span class="dv"&gt;2&lt;/span&gt; &amp;amp;&amp;
+;amp; &lt;span class="ot"&gt;_123&lt;/span&gt;.&lt;span class="fu"&gt;z&lt;/span&gt; == &lt;
+;span class="dv"&gt;3&lt;/span&gt;; &lt;span class="co"&gt;// true&lt;/span&gt;
+_123 &lt;span class="kw"&gt;instanceof&lt;/span&gt; Tuple3; &lt;span class="co"&gt;// true&lt;/
+span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="daggy.taggedsumconstructors"&gt;&lt;code&gt;daggy.<span class="apidocCodeKeywordSpan">taggedSum</span>(constructors)&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Creates a constructor for each key in &lt;code&gt;constructors&lt;/code&gt;. Returns a function with each constructor
+ as a property. Allows &lt;code&gt;instanceof&lt;/code&gt; checks for each constructor and the returned function.&lt;/
+p&gt;
+&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;span class=&amp;#
+x22;kw"&gt;var&lt;/span&gt; Option = &lt;span class="ot"&gt;daggy&lt;/span&gt;.&lt;span class="
+;fu"&gt;taggedSum&lt;/span&gt;({
+    &lt;span class="dt"&gt;Some&lt;/span&gt;: [&lt;span class="st"&gt;&amp;#39;x&amp;#39;&lt;
+;/span&gt;],
+    &lt;span class="dt"&gt;None&lt;/span&gt;: []
+});
+
+&lt;span class="ot"&gt;Option&lt;/span&gt;.&lt;span class="fu"&gt;Some&lt;/span&gt;(&lt;span
+ class="dv"&gt;1&lt;/span&gt;) &lt;span class="kw"&gt;instanceof&lt;/span&gt; &lt;span class
+="ot"&gt;Option&lt;/span&gt;.&lt;span class="fu"&gt;Some&lt;/span&gt;; &lt;span class="
+co"&gt;// true&lt;/span&gt;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.daggy.create" id="apidoc.module.daggy.create">module daggy.create</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.daggy.create.create" id="apidoc.element.daggy.create.create">
+        function <span class="apidocSignatureSpan">daggy.</span>create
+        <span class="apidocSignatureSpan">(proto)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create(proto) {
+    function Ctor() {}
+    Ctor.prototype = proto;
+    return new Ctor();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.daggy.getInstance" id="apidoc.module.daggy.getInstance">module daggy.getInstance</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.daggy.getInstance.getInstance" id="apidoc.element.daggy.getInstance.getInstance">
+        function <span class="apidocSignatureSpan">daggy.</span>getInstance
+        <span class="apidocSignatureSpan">(self, constructor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getInstance(self, constructor) {
+    return self instanceof constructor ? self : create(constructor.prototype);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+code &gt; span.fu { color: #06287e; }
+code &gt; span.er { color: #ff0000; font-weight: bold; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1 id="daggy"&gt;Daggy&lt;/h1&gt;
+&lt;p&gt;Library for creating tagged constructors.&lt;/p&gt;
+&lt;h2 id="daggy.getinstanceself-constructor"&gt;&lt;code&gt;daggy.<span class="apidocCodeKeywordSpan">getInstance
+</span>(self, constructor)&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Returns &lt;code&gt;self&lt;/code&gt; if it's an &lt;code&gt;instanceof constructor&lt;/code&gt;
+;, otherwise creates a new object with &lt;code&gt;constructor&lt;/code&gt;'s prototype.&lt;/p&gt;
+&lt;p&gt;Allows creating constructors that can be used with or without the new keyword but always have the correct prototype
+.&lt;/p&gt;
+&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;span class=&amp;#
+x22;kw"&gt;function&lt;/span&gt; &lt;span class="fu"&gt;WrappedArray&lt;/span&gt;() {
+    &lt;span class="kw"&gt;var&lt;/span&gt; self = &lt;span class="ot"&gt;daggy&lt;/span&gt;.&amp;#
+x3c;span class="fu"&gt;getInstance&lt;/span&gt;(&lt;span class="kw"&gt;this&lt;/span&gt;, WrappedArray
+);
+    &lt;span class="ot"&gt;self&lt;/span&gt;.&lt;span class="fu"&gt;_array&lt;/span&gt; = [].&amp;#
+x3c;span class="ot"&gt;slice&lt;/span&gt;.&lt;span class="fu"&gt;apply&lt;/span&gt;(arguments);
+    &lt;span class="kw"&gt;return&lt;/span&gt; self;
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.daggy.tagged" id="apidoc.module.daggy.tagged">module daggy.tagged</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.daggy.tagged.tagged" id="apidoc.element.daggy.tagged.tagged">
+        function <span class="apidocSignatureSpan">daggy.</span>tagged
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tagged() {
+    var fields = [].slice.apply(arguments);
+    function wrapped() {
+        var self = getInstance(this, wrapped),
+            i;
+
+        if(arguments.length != fields.length)
+            throw new TypeError('Expected ' + fields.length + ' arguments, got ' + arguments.length);
+
+        for(i = 0; i &lt; fields.length; i++)
+            self[fields[i]] = arguments[i];
+
+        return self;
+    }
+    wrapped._length = fields.length;
+    return wrapped;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;span class=&amp;#
+x22;kw"&gt;function&lt;/span&gt; &lt;span class="fu"&gt;WrappedArray&lt;/span&gt;() {
+    &lt;span class="kw"&gt;var&lt;/span&gt; self = &lt;span class="ot"&gt;daggy&lt;/span&gt;.&amp;#
+x3c;span class="fu"&gt;getInstance&lt;/span&gt;(&lt;span class="kw"&gt;this&lt;/span&gt;, WrappedArray
+);
+    &lt;span class="ot"&gt;self&lt;/span&gt;.&lt;span class="fu"&gt;_array&lt;/span&gt; = [].&amp;#
+x3c;span class="ot"&gt;slice&lt;/span&gt;.&lt;span class="fu"&gt;apply&lt;/span&gt;(arguments);
+    &lt;span class="kw"&gt;return&lt;/span&gt; self;
+}
+&lt;span class="kw"&gt;new&lt;/span&gt; &lt;span class="fu"&gt;WrappedArray&lt;/span&gt;(&lt;
+;span class="dv"&gt;1&lt;/span&gt;, &lt;span class="dv"&gt;2&lt;/span&gt;, &lt;span class=&amp;#
+x22;dv"&gt;3&lt;/span&gt;) &lt;span class="kw"&gt;instanceof&lt;/span&gt; WrappedArray; &lt;span
+class="co"&gt;// true&lt;/span&gt;
+&lt;span class="fu"&gt;WrappedArray&lt;/span&gt;(&lt;span class="dv"&gt;1&lt;/span&gt;, &lt;
+;span class="dv"&gt;2&lt;/span&gt;, &lt;span class="dv"&gt;3&lt;/span&gt;) &lt;span class=&amp;#
+x22;kw"&gt;instanceof&lt;/span&gt; WrappedArray; &lt;span class="co"&gt;// true&lt;/span&gt;&lt;/
+code&gt;&lt;/pre&gt;
+&lt;h2 id="daggy.taggedarguments"&gt;&lt;code&gt;daggy.<span class="apidocCodeKeywordSpan">tagged</span>(arguments
+)&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Creates a new constructor with the given field names as arguments and properties. Allows &lt;code&gt;instanceof
+&lt;/code&gt; checks with returned constructor.&lt;/p&gt;
+&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;span class=&amp;#
+x22;kw"&gt;var&lt;/span&gt; Tuple3 = &lt;span class="ot"&gt;daggy&lt;/span&gt;.&lt;span class="
+;fu"&gt;tagged&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, &lt;span class
+="st"&gt;&amp;#39;y&amp;#39;&lt;/span&gt;, &lt;span class="st"&gt;&amp;#39;z&amp;#39;&lt;/span
+&gt;);
+
+&lt;span class="kw"&gt;var&lt;/span&gt; _123 = &lt;span class="fu"&gt;Tuple3&lt;/span&gt;(&amp;#
+x3c;span class="dv"&gt;1&lt;/span&gt;, &lt;span class="dv"&gt;2&lt;/span&gt;, &lt;span class
+="dv"&gt;3&lt;/span&gt;); &lt;span class="co"&gt;// optional new keyword&lt;/span&gt;
+&lt;span class="ot"&gt;_123&lt;/span&gt;.&lt;span class="fu"&gt;x&lt;/span&gt; == &lt;span
+ class="dv"&gt;1&lt;/span&gt; &amp;amp;&amp;amp; &lt;span class="ot"&gt;_123&lt;/span&gt;.&amp;#
+x3c;span class="fu"&gt;y&lt;/span&gt; == &lt;span class="dv"&gt;2&lt;/span&gt; &amp;amp;&amp;
+;amp; &lt;span class="ot"&gt;_123&lt;/span&gt;.&lt;span class="fu"&gt;z&lt;/span&gt; == &lt;
+;span class="dv"&gt;3&lt;/span&gt;; &lt;span class="co"&gt;// true&lt;/span&gt;
+_123 &lt;span class="kw"&gt;instanceof&lt;/span&gt; Tuple3; &lt;span class="co"&gt;// true&lt;/
+span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="daggy.taggedsumconstructors"&gt;&lt;code&gt;daggy.taggedSum(constructors)&lt;/code&gt;&lt;/h2
+&gt;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.daggy.taggedSum" id="apidoc.module.daggy.taggedSum">module daggy.taggedSum</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.daggy.taggedSum.taggedSum" id="apidoc.element.daggy.taggedSum.taggedSum">
+        function <span class="apidocSignatureSpan">daggy.</span>taggedSum
+        <span class="apidocSignatureSpan">(constructors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function taggedSum(constructors) {
+    var key;
+
+    function definitions() {
+        throw new TypeError('Tagged sum was called instead of one of its properties.');
+    }
+
+    function makeCata(key) {
+        return function(dispatches) {
+            var fields = constructors[key],
+                args = [],
+                i;
+
+            if(!dispatches[key])
+                throw new TypeError("Constructors given to cata didn't include: " + key);
+
+            for(i = 0; i &lt; fields.length; i++)
+                args.push(this[fields[i]]);
+
+            return dispatches[key].apply(this, args);
+        };
+    }
+
+    function makeProto(key) {
+        var proto = create(definitions.prototype);
+        proto.cata = makeCata(key);
+        return proto;
+    }
+
+    for(key in constructors) {
+        if(!constructors[key].length) {
+            definitions[key] = makeProto(key);
+            continue;
+        }
+        definitions[key] = tagged.apply(null, constructors[key]);
+        definitions[key].prototype = makeProto(key);
+    }
+
+    return definitions;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&lt;h2 id="daggy.taggedarguments"&gt;&lt;code&gt;daggy.tagged(arguments)&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Creates a new constructor with the given field names as arguments and properties. Allows &lt;code&gt;instanceof
+&lt;/code&gt; checks with returned constructor.&lt;/p&gt;
+&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;span class=&amp;#
+x22;kw"&gt;var&lt;/span&gt; Tuple3 = &lt;span class="ot"&gt;daggy&lt;/span&gt;.&lt;span class="
+;fu"&gt;tagged&lt;/span&gt;(&lt;span class="st"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;, &lt;span class
+="st"&gt;&amp;#39;y&amp;#39;&lt;/span&gt;, &lt;span class="st"&gt;&amp;#39;z&amp;#39;&lt;/span
+&gt;);
+
+&lt;span class="kw"&gt;var&lt;/span&gt; _123 = &lt;span class="fu"&gt;Tuple3&lt;/span&gt;(&amp;#
+x3c;span class="dv"&gt;1&lt;/span&gt;, &lt;span class="dv"&gt;2&lt;/span&gt;, &lt;span class
+="dv"&gt;3&lt;/span&gt;); &lt;span class="co"&gt;// optional new keyword&lt;/span&gt;
+&lt;span class="ot"&gt;_123&lt;/span&gt;.&lt;span class="fu"&gt;x&lt;/span&gt; == &lt;span
+ class="dv"&gt;1&lt;/span&gt; &amp;amp;&amp;amp; &lt;span class="ot"&gt;_123&lt;/span&gt;.&amp;#
+x3c;span class="fu"&gt;y&lt;/span&gt; == &lt;span class="dv"&gt;2&lt;/span&gt; &amp;amp;&amp;
+;amp; &lt;span class="ot"&gt;_123&lt;/span&gt;.&lt;span class="fu"&gt;z&lt;/span&gt; == &lt;
+;span class="dv"&gt;3&lt;/span&gt;; &lt;span class="co"&gt;// true&lt;/span&gt;
+_123 &lt;span class="kw"&gt;instanceof&lt;/span&gt; Tuple3; &lt;span class="co"&gt;// true&lt;/
+span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="daggy.taggedsumconstructors"&gt;&lt;code&gt;daggy.<span class="apidocCodeKeywordSpan">taggedSum</span>(constructors)&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Creates a constructor for each key in &lt;code&gt;constructors&lt;/code&gt;. Returns a function with each constructor
+ as a property. Allows &lt;code&gt;instanceof&lt;/code&gt; checks for each constructor and the returned function.&lt;/
+p&gt;
+&lt;pre class="sourceCode javascript"&gt;&lt;code class="sourceCode javascript"&gt;&lt;span class=&amp;#
+x22;kw"&gt;var&lt;/span&gt; Option = &lt;span class="ot"&gt;daggy&lt;/span&gt;.&lt;span class="
+;fu"&gt;taggedSum&lt;/span&gt;({
+    &lt;span class="dt"&gt;Some&lt;/span&gt;: [&lt;span class="st"&gt;&amp;#39;x&amp;#39;&lt;
+;/span&gt;],
+    &lt;span class="dt"&gt;None&lt;/span&gt;: []
+});
+
+&lt;span class="ot"&gt;Option&lt;/span&gt;.&lt;span class="fu"&gt;Some&lt;/span&gt;(&lt;span
+ class="dv"&gt;1&lt;/span&gt;) &lt;span class="kw"&gt;instanceof&lt;/span&gt; &lt;span class
+="ot"&gt;Option&lt;/span&gt;.&lt;span class="fu"&gt;Some&lt;/span&gt;; &lt;span class="
+co"&gt;// true&lt;/span&gt;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
