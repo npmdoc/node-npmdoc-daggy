@@ -1,4 +1,7 @@
-# api documentation for  [daggy (v0.0.1)](https://github.com/puffnfresh/daggy#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-daggy.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-daggy) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-daggy.svg)](https://travis-ci.org/npmdoc/node-npmdoc-daggy)
+# npmdoc-daggy
+
+#### basic api documentation for  [daggy (v0.0.1)](https://github.com/puffnfresh/daggy#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-daggy.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-daggy) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-daggy.svg)](https://travis-ci.org/npmdoc/node-npmdoc-daggy)
+
 #### Library for creating tagged constructors.
 
 [![NPM](https://nodei.co/npm/daggy.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/daggy)
@@ -53,7 +56,8 @@
         "url": "git://github.com/puffnfresh/daggy.git"
     },
     "scripts": {},
-    "version": "0.0.1"
+    "version": "0.0.1",
+    "bin": {}
 }
 ```
 
